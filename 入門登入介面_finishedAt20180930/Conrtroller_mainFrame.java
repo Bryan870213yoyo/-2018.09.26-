@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 public class Conrtroller_mainFrame implements Initializable {
 
     @FXML Menu Game_File, Game_Record, Exit;
+    @FXML MenuItem exit;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -22,7 +23,15 @@ public class Conrtroller_mainFrame implements Initializable {
         OOXX_Game.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                StageManger.getStage("mainFrameStage").hide();
                 StageManger.getStage("OOXXGameStage").show();
+            }
+        });
+
+        exit.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.exit(0);
             }
         });
     }

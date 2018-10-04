@@ -42,6 +42,8 @@ public class Controller_login implements Initializable {
         KeyboardBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                StageManger.deleteStage("randomKeyboardStage");
+                StageManger.addStage("randomKeyboardStage","random keyboard interface","Fxml_randomKeyboard.fxml",250,250);
                 StageManger.getStage("randomKeyboardStage").show();
                 SaveReference.addToSaveReference("password", PasswordBox);
             }
@@ -49,6 +51,23 @@ public class Controller_login implements Initializable {
 
         //LoginBtn的功能設置
         LoginBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                if(AccountBox.getText().equals("gorgor@gmail.com")&& PasswordBox.getText().equals("666666")){
+                    StageManger.getStage("mainFrameStage").show();
+                    AccountBox.setText("");
+                    PasswordBox.setText("");
+                    StageManger.getStage("loginStage").close();
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,"Account or password is wrong.", "Warning",JOptionPane.ERROR_MESSAGE);
+                    AccountBox.setText("");
+                    PasswordBox.setText("");
+                }
+            }
+        });
+        //用enter登入看看?
+        PasswordBox.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 if(AccountBox.getText().equals("gorgor@gmail.com")&& PasswordBox.getText().equals("666666")){

@@ -42,4 +42,7 @@ public class StageManger {
     public static Stage getStage(String name){
         return stages.get(name);
     }
+
+    //刪除StagerManger中HashMap中指定Stage的方法
+    public static void deleteStage(String name){ stages.remove(name); }
 }

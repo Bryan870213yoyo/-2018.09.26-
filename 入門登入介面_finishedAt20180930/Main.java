@@ -16,6 +16,13 @@ public class Main extends Application {
         //設兩行備用
 //        StageManger.addStage("","","",123,123);
 //        StageManger.addStage("","","",123,123);
+        //StageManger的mainFrame跟OOXX GAME的開關設定
+        //OOXX GAME關閉時的設定
+        StageManger.getStage("OOXXGameStage").setOnCloseRequest(event -> {
+            System.out.println("closing OOXX");
+            StageManger.getStage("mainFrameStage").show();
+        });
+        //default setting of the first showing window.
         StageManger.getStage("loginStage").show();
     }
     public static void main(String[] args) {

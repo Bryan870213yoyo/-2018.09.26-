@@ -3,16 +3,23 @@ package 入門登入介面_finishedAt20180930;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 
 import javax.swing.*;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class Controller_OOXX_Game {
+public class Controller_OOXX_Game implements Initializable {
     //加入成員參數 start按鈕 & 九個井字遊戲按鈕
     @FXML Button btn1,btn2,btn3,btn4,btn5,
                  btn6,btn7,btn8,btn9,start;
     //做出按鈕陣列依序加入功能
+
+    public void initialize(URL location, ResourceBundle resources) {
+        addAction();
+    }
 
     //判斷OX的質
     boolean determine_v = true;
@@ -151,4 +158,6 @@ public class Controller_OOXX_Game {
             temp2.setDisable(true);
         }
     }
+        //關閉後顯示mainFrame
+
 }
