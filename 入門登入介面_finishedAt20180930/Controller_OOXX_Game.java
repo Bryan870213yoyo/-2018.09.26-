@@ -158,6 +158,4 @@ public class Controller_OOXX_Game implements Initializable {
             temp2.setDisable(true);
         }
     }
-        //關閉後顯示mainFrame
-
 }

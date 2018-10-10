@@ -12,8 +12,8 @@ import java.util.ResourceBundle;
 
 public class Conrtroller_mainFrame implements Initializable {
 
-    @FXML Menu Game_File, Game_Record, Exit;
-    @FXML MenuItem exit;
+    @FXML Menu Game_File, Game_Record, Function, Exit;
+    @FXML MenuItem exit, Encrypt_And_Decrypt;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -25,6 +25,14 @@ public class Conrtroller_mainFrame implements Initializable {
             public void handle(ActionEvent event) {
                 StageManger.getStage("mainFrameStage").hide();
                 StageManger.getStage("OOXXGameStage").show();
+            }
+        });
+
+        Encrypt_And_Decrypt.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                StageManger.getStage("mainFrameStage").hide();
+                StageManger.getStage("encryptAndDecryptStage").show();
             }
         });
 

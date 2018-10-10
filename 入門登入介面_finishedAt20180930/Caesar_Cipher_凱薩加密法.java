@@ -1,3 +1,5 @@
+package 入門登入介面_finishedAt20180930;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

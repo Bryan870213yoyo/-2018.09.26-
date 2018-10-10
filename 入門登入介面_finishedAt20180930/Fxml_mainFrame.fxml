@@ -14,6 +14,11 @@
               <menus>
                 <Menu fx:id="Game_File" mnemonicParsing="false" text="Game File" />
                 <Menu fx:id="Game_Record" mnemonicParsing="false" text="Game Record" />
+                  <Menu fx:id="Function" mnemonicParsing="false" text="Function">
+                    <items>
+                      <MenuItem fx:id="Encrypt_And_Decrypt" mnemonicParsing="false" text="Encrypt &amp; Decrypt" />
+                    </items>
+                  </Menu>
                 <Menu fx:id="Exit" mnemonicParsing="false" text="Exit">
                      <items>
                         <MenuItem fx:id="exit" mnemonicParsing="false" text="exit" />

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="入門登入介面_finishedAt20180930.Controller_encryptAndDecrypt">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="500.0">
+         <center>
+            <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="400.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="label_method" alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="41.0" prefWidth="100.0" text="Method">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <MenuButton fx:id="encrypt_way" mnemonicParsing="false" prefHeight="35.0" prefWidth="95.0" text="加密法">
+                    <items>
+                      <MenuItem fx:id="Caesar_Cipher" mnemonicParsing="false" text="Caesar_Cipher" />
+                        <MenuItem fx:id="none" mnemonicParsing="false" text="None" />
+                    </items>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </MenuButton>
+                  <Label fx:id="label_password" alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="54.0" prefWidth="100.0" text="Password">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textfield_password" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="92.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="96.0" prefWidth="100.0">
+                     <children>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <RadioButton fx:id="rabtn_encrypt" contentDisplay="CENTER" layoutY="46.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="Emcrypt">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="rabtn_decrypt" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="Decrypt" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+                  <GridPane prefHeight="100.0" prefWidth="100.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="btn_exit" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" text="Exit" GridPane.rowIndex="1" />
+                        <Button fx:id="btn_run" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" text="Run" />
+                     </children>
+                  </GridPane>
+               </children></VBox>
+         </center>
+         <left>
+            <TextArea fx:id="inputBox" prefHeight="400.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <TextArea fx:id="outputBox" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>
