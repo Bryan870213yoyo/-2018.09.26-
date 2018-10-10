@@ -51,7 +51,7 @@ public class Controller_encryptAndDecrypt implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 StageManger.getStage("mainFrameStage").show();
-                StageManger.getStage("emcryptAndDecryptStage").close();
+                StageManger.getStage("encryptAndDecryptStage").close();
             }
         });
         //設定Run的功能
