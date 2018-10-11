@@ -12,7 +12,7 @@ public class Main extends Application {
         StageManger.addStage("loginStage","login interface","Fxml_login.fxml", 300,300);
         StageManger.addStage("randomKeyboardStage","random keyboard interface","Fxml_randomKeyboard.fxml",250,250);
         StageManger.addStage("mainFrameStage","main frame interface","Fxml_mainFrame.fxml",450,300);
-        StageManger.addStage("OOXXGameStage", "Ｂｒｙａｎ’ｓ　ＯＯＸＸ　ＧＡＭＥ","Fxml_OOXX_Game.fxml",450,450);
+        StageManger.addStage("OOXXGameStage","Ｂｒｙａｎ’ｓ　ＯＯＸＸ　ＧＡＭＥ","Fxml_OOXX_Game.fxml",450,450);
         StageManger.addStage("encryptAndDecryptStage", "Encrypt & Decrypt interface", "Fxml_encryptAndDecrypt.fxml", 500,400);
         //設兩行備用
 //        StageManger.addStage("","","",123,123);

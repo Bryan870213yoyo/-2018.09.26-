@@ -49,12 +49,15 @@
                               <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <RadioButton fx:id="rabtn_encrypt" contentDisplay="CENTER" layoutY="46.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="Emcrypt">
+                              <RadioButton fx:id="rabtn_encrypt" contentDisplay="CENTER" layoutY="46.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="Encrypt">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="radioBtnGroup" />
+                                 </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="rabtn_decrypt" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="Decrypt" GridPane.rowIndex="1">
+                              <RadioButton fx:id="rabtn_decrypt" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="Decrypt" toggleGroup="$radioBtnGroup" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
@@ -84,6 +87,28 @@
          <right>
             <TextArea fx:id="outputBox" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
          </right>
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu fx:id="menu_file" mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="menuitem_open" mnemonicParsing="false" text="open" />
+                        <MenuItem fx:id="menuitem_save" mnemonicParsing="false" text="save" />
+                  </items>
+                </Menu>
+                <Menu fx:id="menu_edit" mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu fx:id="menu_help" mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
       </BorderPane>
    </children>
 </AnchorPane>
