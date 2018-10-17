@@ -8,6 +8,9 @@ import javafx.scene.control.*;
 import javafx.scene.control.RadioButton;
 
 import javax.swing.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -25,6 +28,7 @@ public class Controller_encryptAndDecrypt implements Initializable {
     @FXML MenuItem menuitem_open, menuitem_save;
 
     int controllerOfTheTypeOfTheEncrypt = 0;
+    private JFileChooser filechooser = new JFileChooser();    //開啟檔案選擇器
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -62,6 +66,36 @@ public class Controller_encryptAndDecrypt implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 determineOfTheWay();
+            }
+        });
+        //設定openFile的功能
+        menuitem_open.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                //檔案選擇器裡的檔案被選擇
+                if(filechooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
+                    //儲存文字用的空字串
+                    String str = "";
+                    //
+                    try {
+                        //建立一個檔案閱讀器，並將檔案選擇棄選擇的檔案匯入給檔案閱讀器閱讀
+                        FileReader frd = new FileReader(filechooser.getSelectedFile());
+                        //建立緩衝區
+                        BufferedReader buf = new BufferedReader(frd);
+                        //按行讀取(判斷下一行是否有東西後再執行，若沒有就結束)
+                        while((str = buf.readLine()) != null){
+                            inputBox.appendText(str + '\n');
+                        }
+                        //關閉檔案閱讀器
+                        frd.close();
+                    }
+                    catch (IOException e){
+                        JOptionPane.showMessageDialog(null,"Error" + e.getMessage(),"Warning",JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    catch (Exception e){
+                        JOptionPane.showMessageDialog(null,"Error" + e.getMessage(),"Warning",JOptionPane.INFORMATION_MESSAGE);
+                    }
+                }
             }
         });
     }
