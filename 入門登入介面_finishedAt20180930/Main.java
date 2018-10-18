@@ -3,17 +3,23 @@ package 入門登入介面_finishedAt20180930;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
+import java.awt.*;
+
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        //將畫面設置在中間
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int screenW = screenSize.width;
+        int screenH = screenSize.height;
 
         //開始將各個stage加入到StageManger中
         StageManger.addStage("loginStage","login interface","Fxml_login.fxml", 300,300);
         StageManger.addStage("randomKeyboardStage","random keyboard interface","Fxml_randomKeyboard.fxml",250,250);
         StageManger.addStage("mainFrameStage","main frame interface","Fxml_mainFrame.fxml",450,300);
         StageManger.addStage("OOXXGameStage","Ｂｒｙａｎ’ｓ　ＯＯＸＸ　ＧＡＭＥ","Fxml_OOXX_Game.fxml",450,450);
-        StageManger.addStage("encryptAndDecryptStage", "Encrypt & Decrypt interface", "Fxml_encryptAndDecrypt.fxml", 500,400);
+        StageManger.addStage("encryptAndDecryptStage", "Encrypt & Decrypt interface", "Fxml_encryptAndDecrypt.fxml", 500,425);
         //設兩行備用
 //        StageManger.addStage("","","",123,123);
 //        StageManger.addStage("","","",123,123);
@@ -31,7 +37,8 @@ public class Main extends Application {
         });
 
         //default setting of the first showing window.
-        StageManger.getStage("loginStage").show();
+//        StageManger.getStage("loginStage").show();
+        StageManger.getStage("encryptAndDecryptStage").show();
     }
     public static void main(String[] args) {
         launch(args);
