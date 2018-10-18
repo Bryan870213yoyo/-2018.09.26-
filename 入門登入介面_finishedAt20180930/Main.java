@@ -37,8 +37,8 @@ public class Main extends Application {
         });
 
         //default setting of the first showing window.
-//        StageManger.getStage("loginStage").show();
-        StageManger.getStage("encryptAndDecryptStage").show();
+        StageManger.getStage("loginStage").show();
+//        StageManger.getStage("encryptAndDecryptStage").show();
     }
     public static void main(String[] args) {
         launch(args);
