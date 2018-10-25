@@ -6,7 +6,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="150.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="入門登入介面_finishedAt20180930.Controller_encryptFunction">
    <children>
       <BorderPane prefHeight="150.0" prefWidth="400.0">
@@ -28,13 +27,13 @@
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="66.0" text="Key" GridPane.columnIndex="2" />
                   <MenuButton fx:id="menubtn" mnemonicParsing="false" prefHeight="27.0" prefWidth="66.0" GridPane.columnIndex="1">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Caesar" />
-                      <MenuItem mnemonicParsing="false" text="XOR" />
+                      <MenuItem fx:id="caesar" mnemonicParsing="false" text="Caesar" />
+                      <MenuItem mnemonicParsing="false" text="XOR" fx:id="xor" />
                     </items>
                   </MenuButton>
                   <TextField fx:id="key" GridPane.columnIndex="3" />
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Run" GridPane.columnIndex="4" />
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Close" GridPane.columnIndex="5" />
+                  <Button fx:id="run" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Run" GridPane.columnIndex="4" />
+                  <Button fx:id="close" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Close" GridPane.columnIndex="5" />
                </children>
             </GridPane>
          </top>
@@ -54,7 +53,7 @@
             </GridPane>
          </left>
          <bottom>
-            <ProgressBar prefHeight="18.0" prefWidth="419.0" progress="0.0" BorderPane.alignment="CENTER" />
+            <ProgressBar fx:id="progressBar" prefHeight="18.0" prefWidth="419.0" progress="0.0" BorderPane.alignment="CENTER" />
          </bottom>
          <center>
             <GridPane BorderPane.alignment="CENTER">
@@ -66,8 +65,8 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextArea prefHeight="200.0" prefWidth="200.0" />
-                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
+                  <TextArea fx:id="textA1" prefHeight="200.0" prefWidth="200.0" />
+                  <TextArea fx:id="textA2" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
          </center>
@@ -81,8 +80,8 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" prefHeight="53.0" prefWidth="91.0" text="choose" />
-                  <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="82.0" text="choose" GridPane.rowIndex="1" />
+                  <Button fx:id="loadFile1" mnemonicParsing="false" prefHeight="53.0" prefWidth="91.0" text="choose" />
+                  <Button fx:id="loadFile2" mnemonicParsing="false" prefHeight="55.0" prefWidth="82.0" text="choose" GridPane.rowIndex="1" />
                </children>
             </GridPane>
          </right>
