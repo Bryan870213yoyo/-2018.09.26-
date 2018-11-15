@@ -23,6 +23,7 @@ public class Main extends Application {
         StageManger.addStage("encryptFunctionStage", "Encrypt function", "Fxml_encryptFunction.fxml", 400,150);
         StageManger.addStage("timingStage", "Timing function", "Fxml_timing.fxml", 380,140);
         StageManger.addStage("moveStage", "Move function", "Fxml_move.fxml", 400,400);
+        StageManger.addStage("eatingSnakeStage", "Eating Snake function", "Fxml_eatingSnake.fxml", 600,400);
         //設兩行備用
 //        StageManger.addStage("","","",123,123);
 //        StageManger.addStage("","","",123,123);
@@ -42,7 +43,7 @@ public class Main extends Application {
         //default setting of the first showing window.
 //        StageManger.getStage("loginStage").show();
 //        StageManger.getStage("encryptAndDecryptStage").show();
-        StageManger.getStage("moveStage").show();
+        StageManger.getStage("eatingSnakeStage").show();
         StageManger.getStage("timingStage").show();
     }
     public static void main(String[] args) {

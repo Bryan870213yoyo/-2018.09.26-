@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane onKeyPressed="#keyPressed" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="入門登入介面_finishedAt20180930.Controller_eatingSnake">
+   <children>
+      <Circle fx:id="ball" fill="DODGERBLUE" layoutX="30.0" layoutY="30.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+   </children>
+</AnchorPane>
