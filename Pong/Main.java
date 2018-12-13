@@ -1,5 +1,3 @@
-package sample;
-
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
@@ -16,8 +14,6 @@ public class Main extends Application {
 
         Board board1 = (Board)SaveReference.getReference("board1");
         Board board2 = (Board)SaveReference.getReference("board2");
-        boolean A1 =
-        boolean A2
         StageManager.getStage("gameStage").getScene().getRoot().requestFocus();
         StageManager.getStage("gameStage").getScene().setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
@@ -29,17 +25,16 @@ public class Main extends Application {
                 }
                 switch (event.getCode()){
                     case W:
-
-                        board1.setLayoutY(board1.getLayoutY()-10);
+                        board1.setDir(1);
                         break;
                     case S:
-                        board1.setLayoutY(board1.getLayoutY()+10);
+                        board1.setDir(2);
                         break;
                     case UP:
-                        board2.setLayoutY(board2.getLayoutY()-10);
+                        board2.setDir(1);
                         break;
                     case DOWN:
-                        board2.setLayoutY(board2.getLayoutY()+10);
+                        board2.setDir(2);
                         break;
                 }
             }

@@ -1,5 +1,3 @@
-package sample;
-
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.KeyEvent;
@@ -12,11 +10,6 @@ public class Controller implements Initializable {
 
     @FXML
     private AnchorPane anchorPane;
-
-    boolean A1 = false;
-    boolean A2 = false;
-    boolean B1 = false;
-    boolean B2 = false;
 
     private String boardStyle = "-fx-background-color: white;";
     private String pongStyle = "-fx-background-color: white;";
@@ -35,10 +28,6 @@ public class Controller implements Initializable {
 
         SaveReference.addReference("board1",board1);
         SaveReference.addReference("board2",board2);
-        SaveReference.addReference("A1",A1);
-        SaveReference.addReference("A2",A2);
-        SaveReference.addReference("B1",B1);
-        SaveReference.addReference("B2",B2);
 
         anchorPane.getChildren().add(pong);
         anchorPane.getChildren().add(board1);
@@ -50,18 +39,4 @@ public class Controller implements Initializable {
 
     }
 
-
-    public void OKP(KeyEvent keyEvent) {
-        A1 = true;
-        A2 = true;
-        B1 = true;
-        B2 = true;
-    }
-
-    public void OKR(KeyEvent keyEvent) {
-        A1 = false;
-        A2 = false;
-        B1 = false;
-        B2 = false;
-    }
 }
