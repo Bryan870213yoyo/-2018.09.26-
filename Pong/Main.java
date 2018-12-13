@@ -30,6 +30,8 @@ public class Main extends Application {
                     case S:
                         board1.setDir(2);
                         break;
+                }
+                switch (event.getCode()){
                     case UP:
                         board2.setDir(1);
                         break;
