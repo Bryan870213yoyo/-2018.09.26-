@@ -21,12 +21,16 @@ public class start_interface implements Initializable {
     //建立必要數據
     InetAddress addr;
     String serverIP;
+    Server server = new Server();
+    Thread serverThread = new Thread(server);
+    Client client = new Client();
+    Thread clientThread = new Thread(client);
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Scanner scn = new Scanner(System.in);
+
 
     }
-//==============BIG_Server Button的細項控制=========================
+//==================BIG_Server Button的細項控制=========================
     //移上去時變大
     public void serverButtonEntered(MouseEvent mouseEvent) { this.BIG_Server.setFont(Font.font(36.0f)); }
     //移出去時變回原本大小
@@ -35,7 +39,7 @@ public class start_interface implements Initializable {
     public void serverButtonPressed(MouseEvent mouseEvent) {
         this.BIG_Server.setFont(Font.font(25.0f));
     }
-//==============BIG_Client Button的細項控制=========================
+//==================BIG_Client Button的細項控制=========================
     //移上去時變大
     public void clientButtonEntered(MouseEvent mouseEvent) { this.BIG_Client.setFont(Font.font(36.0f)); }
     //移出去時變回原本大小
@@ -44,7 +48,7 @@ public class start_interface implements Initializable {
     public void clientButtonPressed(MouseEvent mouseEvent) {
         this.BIG_Client.setFont(Font.font(25.0f));
     }
-//===================getIP Button的細項控制=========================
+//========================getIP Button的細項控制=========================
     //移出去時變回原本大小
     public void getIpButtonExited(MouseEvent mouseEvent) {this.getIP.setFont(Font.font(11.0f)); }
     //按下時變更小，可確認有點選，以及點下時的執行行為
@@ -54,7 +58,7 @@ public class start_interface implements Initializable {
         serverIP = addr.getHostAddress();
         Label_serverIP.setText(serverIP);
     }
-//===============setServer Button的細項控制==========================
+//====================setServer Button的細項控制==========================
     //移上去時變大
     public void setServerEntered(MouseEvent mouseEvent) {this.setServer.setFont(Font.font(13.0f)); }
     //移出去時變回原本大小
@@ -62,11 +66,8 @@ public class start_interface implements Initializable {
     //按下時變更小，可確認有點選，以及點下時的執行行為
     public void setServerPressed(MouseEvent mouseEvent) {
         this.setServer.setFont(Font.font(11.0f));
-        String serverStatusString = (String)SaveReference.getReference("serverStatus");
-        while(!serverStatusString.equals("成功連線!")){
-            serverStatus.setText(serverStatusString);
-        }
-        serverStatus.setText("成功連線!");
+        serverThread.start();
+        SaveReference.addReference("Label_serverStatus", serverStatus);
     }
 //===============connectToSever Button的細項控制==========================
     //移上去時變大
@@ -76,11 +77,7 @@ public class start_interface implements Initializable {
     //按下時變更小，可確認有點選，以及點下時的執行行為
     public void connectToServerPressed(MouseEvent mouseEvent) {
         this.connectToServer.setFont(Font.font(11.0f));
-        SaveReference.addReference("server's IP",serverIP);
-        String clientStatusString = (String)SaveReference.getReference("clientStatus");
-        while(!clientStatusString.equals("成功連線!")){
-            clientStatus.setText(clientStatusString);
-        }
-        clientStatus.setText("成功連線!");
+        clientThread.start();
+        SaveReference.addReference("Label_clientStatus", clientStatus);
     }
 }
