@@ -9,8 +9,10 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
 
         StageManager.addStage("gameStage","Pong","table.fxml",1000,600);
+        StageManager.addStage("choosingStage","Initial setting", "start_interface.fxml", 450,300);
 
-        StageManager.getStage("gameStage").show();
+//        StageManager.getStage("gameStage").show();
+        StageManager.getStage("choosingStage").show();
 
         Board board1 = (Board)SaveReference.getReference("board1");
         Board board2 = (Board)SaveReference.getReference("board2");
