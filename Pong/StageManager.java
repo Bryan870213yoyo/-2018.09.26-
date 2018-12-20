@@ -37,7 +37,13 @@ public class StageManager {
             stage.setY(screenH/2 - height/2);
             stage.setResizable(false);
             stage.setTitle(title);
-            Scene scene = new Scene(loadStage(resource),width,height);
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(StageManager.class.getResource(resource));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Scene scene = new Scene(root,width,height);
             stage.setScene(scene);
             stageArr.put(name,stage);
 
@@ -45,16 +51,6 @@ public class StageManager {
 
     }
 
-    //載入Stage
-    public static Parent loadStage(String resource) {
-        Parent root = null;
-        try {
-            root = FXMLLoader.load(StageManager.class.getResource(resource));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return root;
-    }
 
     public static Stage getStage(String name){
         return stageArr.get(name);
